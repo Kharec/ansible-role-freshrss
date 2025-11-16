@@ -19,14 +19,22 @@ It **does not** deploy php, nor a webserver or a database. However, it does inst
 
 ```yaml
 freshrss_root_dir: "/var/www"
-freshrss_path: "/var/www/rss"
 freshrss_version: "1.27.1"
-freshrss_refresh_interval: 15 # every 15 minutes
+freshrss_refresh_interval: 15
 ```
+
+Variables:
+
+- `freshrss_root_dir`: Directory where FreshRSS archive is downloaded and extracted (required)
+- `freshrss_path`: Web-accessible path where FreshRSS will be symlinked (defaults to `{{ freshrss_root_dir }}/freshrss`)
+- `freshrss_version`: FreshRSS version to deploy (e.g., "1.27.1")
+- `freshrss_refresh_interval`: Feed refresh interval in minutes (e.g., 15 = every 15 minutes)
 
 ## FreshRSS configuration
 
-It's done once deployed, navigate to the address you’ve installed your server to complete the installation from the GUI.
+The configuration is to be done once deployed.
+
+Navigate to the address you’ve installed your server to complete the installation from the GUI.
 
 ## License
 
