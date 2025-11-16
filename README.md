@@ -38,6 +38,7 @@ This role doesn't have any dependencies to other roles.
 | `freshrss_path`             | No       | `{{ freshrss_root_dir }}/freshrss` | Web-accessible path where FreshRSS will be symlinked             |
 | `freshrss_version`          | **Yes**  | -                                  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
 | `freshrss_refresh_interval` | **Yes**  | -                                  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
+| `freshrss_checksum`         | No       | `""`                               | SHA256 checksum to verify the archive if user sets it            |
 
 ## Addititional information
 
