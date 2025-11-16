@@ -6,6 +6,15 @@ It **does not** deploy php, nor a webserver or a database.
 
 However, it does install the PHP dependencies for FreshRSS, including php-sqlite3 in case you want to use a simple SQLite database.
 
+## Requirements
+
+Ansible 2.10
+Deb-based distribution (Debian, Ubuntu, etc.)
+
+## Dependencies
+
+This role doesn't have any dependencies to other roles.
+
 ## Playbook example
 
 ```yaml
