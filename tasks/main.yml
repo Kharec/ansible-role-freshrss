@@ -1,0 +1,6 @@
+---
+- name: Setup requirements
+  ansible.builtin.include_tasks: preparation.yml
+
+- name: Deploy FreshRSS
+  ansible.builtin.include_tasks: deploy.yml
