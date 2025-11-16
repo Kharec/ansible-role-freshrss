@@ -1,0 +1,53 @@
+---
+- name: Check if this is the first run
+  ansible.builtin.stat:
+    path: "{{ freshrss_path }}"
+  register: freshrss_dir
+
+- name: Download FreshRSS
+  ansible.builtin.get_url:
+    url: https://github.com/FreshRSS/FreshRSS/archive/refs/tags/{{ freshrss_version }}.tar.gz
+    dest: "{{ freshrss_root_dir }}/freshrss-{{ freshrss_version }}.tar.gz"
+    mode: '0644'
+  when: not freshrss_dir.stat.exists
+
+- name: Uncompress FreshRSS
+  ansible.builtin.unarchive:
+    src: "{{ freshrss_root_dir }}/freshrss-{{ freshrss_version }}.tar.gz"
+    dest: "{{ freshrss_root_dir }}"
+    remote_src: true
+  when: not freshrss_dir.stat.exists
+
+- name: Clean archive
+  ansible.builtin.file:
+    name: "{{ freshrss_root_dir }}/freshrss-{{ freshrss_version }}.tar.gz"
+    state: absent
+
+- name: Give ownership to www-data
+  ansible.builtin.file:
+    path: "{{ freshrss_root_dir }}/FreshRSS-{{ freshrss_version }}"
+    owner: www-data
+    group: www-data
+    recurse: true
+
+- name: Link the folder to web root on folder
+  ansible.builtin.file:
+    src: "{{ freshrss_root_dir }}/FreshRSS-{{ freshrss_version }}"
+    dest: "{{ freshrss_path }}"
+    state: link
+    follow: false
+    force: true
+
+- name: Give ownership to www-data on link
+  ansible.builtin.file:
+    path: "{{ freshrss_path }}"
+    owner: www-data
+    group: www-data
+    follow: false
+
+- name: Setup a cron to refresh feeds
+  ansible.builtin.cron:
+    name: update feeds
+    user: www-data
+    minute: "*/{{ freshrss_refresh_interval }}"
+    job: php -f {{ freshrss_path }}/app/actualize_script.php 1>/dev/null 2>&1
