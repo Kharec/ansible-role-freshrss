@@ -21,7 +21,7 @@ However, it does install the PHP dependencies for FreshRSS, including php-sqlite
     - freshrss
 ```
 
-## Variables:
+## Variables
 
 | Variable                    | Default                            | Required | Description                                                      |
 | --------------------------- | ---------------------------------- | -------- | ---------------------------------------------------------------- |
@@ -30,9 +30,9 @@ However, it does install the PHP dependencies for FreshRSS, including php-sqlite
 | `freshrss_version`          | -                                  | **Yes**  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
 | `freshrss_refresh_interval` | -                                  | **Yes**  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
 
-## FreshRSS configuration
+## Addititional information
 
-The configuration is to be done once deployed.
+FreshRSS configuration is to be done once deployed.
 
 Navigate to the address you’ve installed your server to complete the installation from the GUI.
 
