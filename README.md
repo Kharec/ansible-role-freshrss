@@ -32,12 +32,12 @@ This role doesn't have any dependencies to other roles.
 
 ## Variables
 
-| Variable                    | Default                            | Required | Description                                                      |
-| --------------------------- | ---------------------------------- | -------- | ---------------------------------------------------------------- |
-| `freshrss_root_dir`         | -                                  | **Yes**  | Directory where FreshRSS archive is downloaded and extracted     |
-| `freshrss_path`             | `{{ freshrss_root_dir }}/freshrss` | No       | Web-accessible path where FreshRSS will be symlinked             |
-| `freshrss_version`          | -                                  | **Yes**  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
-| `freshrss_refresh_interval` | -                                  | **Yes**  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
+| Variable                    | Required | Default                            | Description                                                      |
+| --------------------------- | -------- | ---------------------------------- | ---------------------------------------------------------------- |
+| `freshrss_root_dir`         | **Yes**  | -                                  | Directory where FreshRSS archive is downloaded and extracted     |
+| `freshrss_path`             | No       | `{{ freshrss_root_dir }}/freshrss` | Web-accessible path where FreshRSS will be symlinked             |
+| `freshrss_version`          | **Yes**  | -                                  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
+| `freshrss_refresh_interval` | **Yes**  | -                                  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
 
 ## Addititional information
 
