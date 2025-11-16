@@ -22,6 +22,7 @@
   ansible.builtin.file:
     name: "{{ freshrss_root_dir }}/freshrss-{{ freshrss_version }}.tar.gz"
     state: absent
+  when: not freshrss_dir.stat.exists
 
 - name: Give ownership to www-data
   ansible.builtin.file:
