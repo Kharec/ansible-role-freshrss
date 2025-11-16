@@ -40,7 +40,7 @@ This role doesn't have any dependencies to other roles.
 | `freshrss_refresh_interval` | **Yes**  | -                                  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
 | `freshrss_checksum`         | No       | `""`                               | SHA256 checksum to verify the archive if user sets it            |
 
-## Addititional information
+## Additional information
 
 FreshRSS configuration is to be done once deployed.
 
