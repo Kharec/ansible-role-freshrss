@@ -2,7 +2,7 @@
 
 This role deploys [FreshRSS](https://www.freshrss.org/) to your server(s).
 
-It **does not** deploy php, nor a webserver or a database. However, it does install the dependencies for FreshRSS, including php-sqlite3 in case you want to use a simple SQLite database.
+It **does not** deploy php, nor a webserver or a database. However, it does install the PHP dependencies for FreshRSS, including php-sqlite3 in case you want to use a simple SQLite database.
 
 ## Example playbook
 
