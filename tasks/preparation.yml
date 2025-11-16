@@ -1,4 +1,10 @@
 ---
+- name: Create freshrss_root_dir if it doesn't exist
+  ansible.builtin.file:
+    path: "{{ freshrss_root_dir }}"
+    state: directory
+    mode: "0755"
+
 - name: Install cron for automatic feed refresh
   ansible.builtin.apt:
     name: cron
