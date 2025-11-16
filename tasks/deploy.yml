@@ -9,6 +9,7 @@
     url: https://github.com/FreshRSS/FreshRSS/archive/refs/tags/{{ freshrss_version }}.tar.gz
     dest: "{{ freshrss_root_dir }}/freshrss-{{ freshrss_version }}.tar.gz"
     mode: '0644'
+    checksum: "{{ freshrss_checksum if (freshrss_checksum | length > 0) else omit }}"
   when: not freshrss_dir.stat.exists
 
 - name: Uncompress FreshRSS
