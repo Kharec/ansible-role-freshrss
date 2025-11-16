@@ -26,7 +26,7 @@ This role doesn't have any dependencies to other roles.
     freshrss_root_dir: "/var/www"
     freshrss_version: "1.27.1"
     freshrss_checksum: "99fd1d0e6f506832e6600c98e4c9369edad6bfec715df9b1b7c8c3eb6a455c22"
-    freshrss_refresh_interval: 15
+    freshrss_refresh_interval: 10
   roles:
     - freshrss
 ```
@@ -38,7 +38,7 @@ This role doesn't have any dependencies to other roles.
 | `freshrss_root_dir`         | **Yes**  | -                                  | Directory where FreshRSS archive is downloaded and extracted     |
 | `freshrss_path`             | No       | `{{ freshrss_root_dir }}/freshrss` | Web-accessible path where FreshRSS will be symlinked             |
 | `freshrss_version`          | **Yes**  | -                                  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
-| `freshrss_refresh_interval` | **Yes**  | -                                  | Feed refresh interval in minutes (e.g., `15` = every 15 minutes) |
+| `freshrss_refresh_interval` | No   | `15`                               | Feed refresh interval in minutes (every X minutes)               |
 | `freshrss_checksum`         | No       | `""`                               | SHA256 checksum to verify the archive if user sets it            |
 | `freshrss_user`             | No       | `www-data`                         | User that will own FreshRSS files and run the cron job           |
 | `freshrss_group`            | No       | `www-data`                         | Group that will own FreshRSS files                               |
