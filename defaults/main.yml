@@ -1,0 +1,3 @@
+---
+freshrss_path: "{{ freshrss_root_dir }}/freshrss"
+
