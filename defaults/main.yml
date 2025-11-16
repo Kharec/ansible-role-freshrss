@@ -3,3 +3,4 @@ freshrss_path: "{{ freshrss_root_dir }}/freshrss"
 freshrss_checksum: ""
 freshrss_user: www-data
 freshrss_group: www-data
+freshrss_refresh_interval: 15
