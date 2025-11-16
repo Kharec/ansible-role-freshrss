@@ -25,6 +25,7 @@ This role doesn't have any dependencies to other roles.
   vars:
     freshrss_root_dir: "/var/www"
     freshrss_version: "1.27.1"
+    freshrss_checksum: "99fd1d0e6f506832e6600c98e4c9369edad6bfec715df9b1b7c8c3eb6a455c22"
     freshrss_refresh_interval: 15
   roles:
     - freshrss
