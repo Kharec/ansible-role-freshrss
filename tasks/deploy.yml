@@ -11,6 +11,8 @@
     mode: "0644"
     checksum: "{{ 'sha256:' ~ freshrss_checksum if (freshrss_checksum | length > 0) else omit }}"
   when: not freshrss_dir.stat.exists
+  retries: 3
+  delay: 5
 
 - name: Uncompress FreshRSS
   ansible.builtin.unarchive:
