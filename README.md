@@ -8,8 +8,8 @@ However, it does install the PHP dependencies for FreshRSS, including php-sqlite
 
 ## Requirements
 
-Ansible 2.10
-Deb-based distribution (Debian, Ubuntu, etc.)
+- Ansible 2.10
+- Deb-based distribution (Debian, Ubuntu, etc.)
 
 ## Dependencies
 
