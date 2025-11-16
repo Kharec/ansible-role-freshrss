@@ -25,11 +25,11 @@
     state: absent
   when: not freshrss_dir.stat.exists
 
-- name: Give ownership to www-data
+- name: Give ownership to {{ freshrss_user }}
   ansible.builtin.file:
     path: "{{ freshrss_root_dir }}/FreshRSS-{{ freshrss_version }}"
-    owner: www-data
-    group: www-data
+    owner: "{{ freshrss_user }}"
+    group: "{{ freshrss_group }}"
     recurse: true
 
 - name: Link the folder to web root on folder
@@ -40,16 +40,16 @@
     follow: false
     force: true
 
-- name: Give ownership to www-data on link
+- name: Give ownership to {{ freshrss_user }} on link
   ansible.builtin.file:
     path: "{{ freshrss_path }}"
-    owner: www-data
-    group: www-data
+    owner: "{{ freshrss_user }}"
+    group: "{{ freshrss_group }}"
     follow: false
 
 - name: Setup a cron to refresh feeds
   ansible.builtin.cron:
     name: update feeds
-    user: www-data
+    user: "{{ freshrss_user }}"
     minute: "*/{{ freshrss_refresh_interval }}"
     job: php -f {{ freshrss_path }}/app/actualize_script.php 1>/dev/null 2>&1
