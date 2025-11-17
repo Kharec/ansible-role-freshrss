@@ -35,13 +35,13 @@ This role doesn't have any dependencies to other roles.
 
 | Variable                    | Required | Default                            | Description                                                      |
 | --------------------------- | -------- | ---------------------------------- | ---------------------------------------------------------------- |
-| `freshrss_root_dir`         | **Yes**  | -                                  | Directory where FreshRSS archive is downloaded and extracted     |
-| `freshrss_path`             | No       | `{{ freshrss_root_dir }}/freshrss` | Web-accessible path where FreshRSS will be symlinked             |
-| `freshrss_version`          | **Yes**  | -                                  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
-| `freshrss_refresh_interval` | No   | `15`                               | Feed refresh interval in minutes (every X minutes)               |
 | `freshrss_checksum`         | No       | `""`                               | SHA256 checksum to verify the archive if user sets it            |
-| `freshrss_user`             | No       | `www-data`                         | User that will own FreshRSS files and run the cron job           |
 | `freshrss_group`            | No       | `www-data`                         | Group that will own FreshRSS files                               |
+| `freshrss_path`             | No       | `{{ freshrss_root_dir }}/freshrss` | Web-accessible path where FreshRSS will be symlinked             |
+| `freshrss_refresh_interval` | No       | `15`                               | Feed refresh interval in minutes (every X minutes)               |
+| `freshrss_root_dir`         | **Yes**  | -                                  | Directory where FreshRSS archive is downloaded and extracted     |
+| `freshrss_user`             | No       | `www-data`                         | User that will own FreshRSS files and run the cron job           |
+| `freshrss_version`          | **Yes**  | -                                  | FreshRSS version to deploy (e.g., `"1.27.1"`)                    |
 
 ## Additional information
 
